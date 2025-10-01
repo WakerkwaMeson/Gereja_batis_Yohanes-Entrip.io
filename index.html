@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Gereja Baptis Yohanes Entrop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./asset/imgs/images.jpeg" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Custom CSS -->
+     <link rel="shortcut icon" href="./asset/imgs/images.jpeg" type="image/x-icon">
+     <!-- koneksi css  -->
+      <link rel="stylesheet" href="./asset/css/styles.css">
+    <!-- <style> </style> -->
+</head>
+<body>
+    <!-- Piano Worship Background -->
+    <div class="piano-background">
+        <div class="piano-container">
+            <div class="piano" id="piano"></div>
+        </div>
+        <div class="music-particles" id="particles"></div>
+        <div class="music-notes">
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+            <div class="note"><i class="fas fa-music"></i></div>
+        </div>
+    </div>
+
+    <!-- Audio Visualizer -->
+    <div class="audio-visualizer">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="cross-loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-container">
+                    <div class="logo-glow"></div>
+                    <img src="./asset/imgs/images.jpeg" alt="Logo Gereja Baptis Yohanes Entrop" class="logo-img">
+                </div>
+                <div class="logo-text-container">
+                    <div class="logo-text">G.B Yohanes</div>
+                    <p class="text-p">Gereja Baptis Yohanes Entrop</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#pengumuman">Pengumuman</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="#live">Live Streaming</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Side Navigation -->
+    <div class="side-nav" id="sideNav">
+        <div class="side-nav-header">
+            <div class="side-nav-logo">
+                <img src="./asset/imgs/images.jpeg" alt="Logo">
+                <span class="side-nav-logo-text">GB Yohanes Entrop</span>
+            </div>
+            <div class="side-nav-close" id="sideNavClose">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#pengumuman">Pengumuman</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#live">Live Streaming</a></li>
+        </ul>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-btn" id="musicBtn">
+            <i class="fas fa-play" id="musicIcon"></i>
+        </button>
+        <div class="music-info">
+            <div class="music-title">Worship Song</div>
+            <div class="music-artist">GB Yohanes Worship</div>
+        </div>
+        <div class="music-progress">
+            <div class="music-progress-bar" id="musicProgressBar"></div>
+        </div>
+    </div>
+
+    <!-- Audio element for music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Gereja Baptis Yohanes Entrop</h1>
+            <p>Tempat persekutuan, pembinaan iman, dan pelayanan kasih bagi semua umat</p>
+            <div class="hero-buttons">
+                <a href="#live" class="btn">Ikuti Ibadah Online</a>
+                <a href="#tentang" class="btn">Tentang Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-text">Jemaat Aktif</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-number" data-target="30">0</div>
+                <div class="stat-text">Kegiatan/Bulan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-text">Pelayanan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-pray"></i></div>
+                <div class="stat-number" data-target="7">0</div>
+                <div class="stat-text">Ibadah/Minggu</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+                <p>Kenali lebih dekat Gereja Baptis Yohanes Entrop dan sejarah pelayanan kami</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./asset/imgs/gedung gereja1.jpg" alt="Gereja Baptis Yohanes Entrop">
+                </div>
+                <div class="about-text">
+                    <h3>Sejarah Gereja Baptis Yohanes Entrop</h3>
+                    <p>Gereja Baptis Yohanes Entrop didirikan dengan visi untuk menjadi gereja yang mengasihi Tuhan dengan sepenuh hati dan mengasihi sesama seperti diri sendiri. Selama bertahun-tahun, kami telah melayani jemaat dengan komitmen untuk membangun iman dan karakter Kristus dalam setiap aspek kehidupan.</p>
+                    <p>Dengan semangat persatuan dan kasih, kami terus berkembang menjadi keluarga spiritual yang peduli satu sama lain dan aktif dalam pelayanan di tengah masyarakat.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-church"></i></div>
+                            <div class="feature-text">
+                                <h4>Persekutuan</h4>
+                                <p>Membangun hubungan yang erat antar jemaat</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="feature-text">
+                                <h4>Pembinaan Iman</h4>
+                                <p>Mengajarkan kebenaran Firman Tuhan</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                            <div class="feature-text">
+                                <h4>Pelayanan</h4>
+                                <p>Melayani dengan kasih kepada sesama</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Gallery -->
+            <div class="about-gallery">
+                <div class="about-gallery-item">
+                    <img src="./asset/imgs/gembala (1).jpg" alt="Gembala Sidang I">
+                    <p>Gembala Sidang I</p>
+                    <h4>SEM Wakerkwa S.Th</h4>
+                </div>
+                <div class="about-gallery-item">
+                    <img src="./asset/imgs/gembala (2).jpg" alt="Gembala Sidang II">
+                    <p>Gembala Sidang II</p>
+                    <h4>TONI WETIPO S.Th</h4>
+                </div>
+                <div class="about-gallery-item">
+                    <img src="./asset/imgs/sekretaris 1.jpg" alt="Sekretaris Jemaat I">
+                    <p>Sekretaris Jemaat I</p>
+                    <h4>WERINUS YIGIBALOM</h4>
+                </div>
+                <div class="about-gallery-item">
+                    <img src="./asset/imgs/Sekretaris2.jpg" alt="Sekretaris Jemaat II">
+                    <p>Sekretaris Jemaat II</p>
+                    <h4>OSTAB TABUNI S.Ap</h4>
+                </div>
+            </div>
+            
+            <div class="vision-mission">
+                <h3>Visi & Misi</h3>
+                <div class="vision-mission-content">
+                    <div class="vision">
+                        <h4><i class="fas fa-eye"></i> Visi</h4>
+                        <p>Menjadi gereja yang mengasihi Tuhan dengan sepenuh hati dan mengasihi sesama seperti diri sendiri</p>
+                    </div>
+                    <div class="mission">
+                        <h4><i class="fas fa-bullseye"></i> Misi</h4>
+                        <p>Membangun iman dan karakter Kristus melalui persekutuan, pembinaan, dan pelayanan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="section-title">
+                <h2>Kelas Pemuda</h2>
+                <p>Kelas Pemudah Anak ekolah Minggu</p>
+            </div>
+             <div class="about-gallery-img">
+                    <img src="./asset/imgs/kelas pemuda.jpeg" alt="Sekretaris Jemaat II">
+                    <h4>Kelas Pemudah</h4>
+                    <p>kelas Pemudah A Lombah Ayat Apalan Setiap Minggu</p>
+                </div> 
+                <br>
+
+             <div class="about-gallery-img">
+                    <img src="./asset/imgs/kelas remaja.jpg" alt="Sekretaris Jemaat II">
+                    <h4>Kelas Remaja</h4>
+                    <p>kelas Remaja Lombah musih Setiap Minggu</p>
+                </div>
+                <br>
+
+             <div class="about-gallery-img">
+                    <img src="./asset/imgs/kelas indria1.jpg" alt="Sekretaris Jemaat II">
+                    <h4>Kelas Indria I</h4>
+                    <p>kelas Indria Lombah Makan Kerupuk</p>
+                </div>
+                <br>
+
+             <!-- <div class="about-gallery-img">
+                    <img src="./asset/imgs/kelas indria 2.jpeg" alt="Sekretaris Jemaat II">
+                    <h4>Kelas Indria II</h4>
+                    <p>kelas Indria Lombah membaca alkitab</p>
+                </div> -->
+            <!-- <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Gereja ini telah menjadi rumah kedua bagi saya dan keluarga. Kasih dan persekutuan yang saya dapatkan di sini sungguh luar biasa."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Testimonial Author" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Siti Rahayu</h4>
+                            <p>Jemaat Sejak 2015</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Melalui pembinaan di gereja ini, iman saya semakin diperkuat dan saya belajar bagaimana mengasihi Tuhan dan sesama dengan lebih tulus."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial Author" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Budi Santoso</h4>
+                            <p>Jemaat Sejak 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Pelayanan yang dilakukan gereja ini benar-benar memberikan dampak positif bagi masyarakat. Saya bangga menjadi bagian dari keluarga besar GB Yohanes."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Testimonial Author" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Maya Putri</h4>
+                            <p>Jemaat Sejak 2017</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcement Section -->
+    <section id="pengumuman" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pengumuman Terbaru</h2>
+                <p>Informasi penting seputar kegiatan gereja</p>
+            </div>
+            <div class="announcement-grid">
+                <div class="announcement-card">
+                    <div class="announcement-card-header">
+                        <div class="announcement-date">
+                            <i class="far fa-calendar-alt"></i> 15 Mei 2023
+                        </div>
+                        <div class="announcement-category">Ibadah</div>
+                    </div>
+                    <div class="announcement-card-body">
+                        <h4>Ibadah Keluarga Kelompok I</h4>
+                        <p>Perayaan Hari paska akan dilaksanakan pada hari Minggu, 28 Mei 2023 dengan tema "Penuh dengan Roh Kudus".</p>
+                    </div>
+                    <div class="announcement-card-footer">
+                        <div class="announcement-author">
+                            <i class="fas fa-user"></i> Bpk.Sem Wakerkwa
+                        </div>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="announcement-card">
+                    <div class="announcement-card-header">
+                        <div class="announcement-date">
+                            <i class="far fa-calendar-alt"></i> 10 Mei 2023
+                        </div>
+                        <div class="announcement-category">Kegiatan</div>
+                    </div>
+                    <div class="announcement-card-body">
+                        <h4>Retreat Pemuda 2023</h4>
+                        <p>Pendaftaran Retreat Pemuda Yohanes Entrop (Yohan) akan dilaksanakan pada 10-12 Juni 2023.</p>
+                    </div>
+                    <div class="announcement-card-footer">
+                        <div class="announcement-author">
+                            <i class="fas fa-user"></i> Tim Pemuda YOHAN
+                        </div>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="announcement-card">
+                    <div class="announcement-card-header">
+                        <div class="announcement-date">
+                            <i class="far fa-calendar-alt"></i> 5 Mei 2023
+                        </div>
+                        <div class="announcement-category">Pelayanan</div>
+                    </div>
+                    <div class="announcement-card-body">
+                        <h4>Bakti Sosial KELOMPOK</h4>
+                        <p>Ibadah keluarga Kelompok gabungan.</p>
+                    </div>
+                    <div class="announcement-card-footer">
+                        <div class="announcement-author">
+                            <i class="fas fa-user"></i> Tim Pw
+                        </div>
+                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Agenda Kegiatan</h2>
+                <p>Jadwal kegiatan gereja yang akan datang</p>
+            </div>
+            <div class="agenda-tabs">
+                <button class="tab-btn active" data-tab="semua">Semua</button>
+                <button class="tab-btn" data-tab="ibadah">Ibadah</button>
+                <button class="tab-btn" data-tab="pembinaan">Pembinaan</button>
+                <button class="tab-btn" data-tab="pelayanan">Pelayanan</button>
+            </div>
+            
+            <div class="tab-content active" id="semua">
+                <div class="agenda-cards">
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">28</div>
+                            <div class="agenda-month">Mei</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Ibadah Perayaan</h4>
+                            <p>Perayaan Hari Pentakosta dengan baptisan air</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 08:00 - 11:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Gedung Utama
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">10</div>
+                            <div class="agenda-month">Jun</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Retreat Pemuda</h4>
+                            <p>Retreat pemuda "Generasi Terang" 2023</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 08:00 - 17:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Villa Bukit Berkat
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">20</div>
+                            <div class="agenda-month">Mei</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Bakti Sosial</h4>
+                            <p>Bakti sosial pemuda yohanes Entrop</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 07:00 - 14:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Gereja Baptis Yohanes Entrop
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="ibadah">
+                <div class="agenda-cards">
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">28</div>
+                            <div class="agenda-month">Mei</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Ibadah Pentakosta</h4>
+                            <p>Perayaan Hari Pentakosta dengan baptisan air</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 08:00 - 11:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Gedung Utama
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="pembinaan">
+                <div class="agenda-cards">
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">10</div>
+                            <div class="agenda-month">Jun</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Retreat Pemuda</h4>
+                            <p>Retreat pemuda "Generasi Terang" 2023</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 08:00 - 17:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Villa Bukit Berkat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="pelayanan">
+                <div class="agenda-cards">
+                    <div class="agenda-card">
+                        <div class="agenda-card-header">
+                            <div class="agenda-date">20</div>
+                            <div class="agenda-month">Mei</div>
+                        </div>
+                        <div class="agenda-card-body">
+                            <h4>Bakti Sosial</h4>
+                            <p>Bakti sosial di Kampung Nelayan</p>
+                            <div class="agenda-time">
+                                <i class="far fa-clock"></i> 07:00 - 14:00 WIB
+                            </div>
+                            <div class="agenda-location">
+                                <i class="fas fa-map-marker-alt"></i> Kampung Nelayan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+                <p>Dokumentasi kegiatan dan pelayanan gereja</p>
+            </div>
+            <div class="gallery-header">
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="ibadah">Ibadah</button>
+                    <button class="filter-btn" data-filter="pembinaan">Pembinaan</button>
+                    <button class="filter-btn" data-filter="pelayanan">Pelayanan</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="gallerySearch" placeholder="Cari foto...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="upload-btn" id="uploadBtn">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload Foto
+                </button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="ibadah" data-title="Ibadah Minggu" data-description="Persekutuan jemaat dalam ibadah mingguan">
+                    <img src="./asset/imgs/img (1).jpg" alt="Ibadah Minggu">
+                    <div class="gallery-overlay">
+                        <h4>Ibadah Minggu</h4>
+                        <p>Perayaan Hari paskah kelahiran tuhan yesus "Pawai obor pemudah Yohen" yohanes entrop</p>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="gallery-action-btn download" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="gallery-action-btn delete" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pembinaan" data-title="Pembinaan Iman" data-description="Sekolah Minggu dan kelas pembinaan">
+                    <img src="./asset/imgs/injil masuk.jpg" alt="Pembinaan Iman">
+                    <div class="gallery-overlay">
+                        <h4>Injil Masuk</h4>
+                        <p>Ibadah Injil Masuk Di Tanah Papua</p>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="gallery-action-btn download" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="gallery-action-btn delete" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pelayanan" data-title="Bakti Sosial" data-description="Pelayanan kasih kepada masyarakat">
+                    <img src="./asset/imgs/alpha.jpg" alt="Bakti Sosial">
+                    <div class="gallery-overlay">
+                        <h4>Materi Alpha</h4>
+                        <p>Cara Melatih Iman Dalam Kebenaran Materi Alpha</p>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="gallery-action-btn download" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="gallery-action-btn delete" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ibadah" data-title="Ibadah Natal" data-description="Perayaan Natal bersama jemaat">
+                    <img src="./asset/imgs/ibadah injil masuk.jpg" alt="Ibadah Natal">
+                    <div class="gallery-overlay">
+                        <h4>pelayanan</h4>
+                        <p>Pelayanan Injil Masuk di tanah papua </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="gallery-action-btn download" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="gallery-action-btn delete" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pembinaan" data-title="Retreat Pemuda" data-description="Pembinaan generasi muda">
+                    <img src="./asset/imgs/img (5).jpg" alt="Retreat Pemuda">
+                    <div class="gallery-overlay">
+                        <h4>Retreat Pemuda</h4>
+                        <p>Pembinaan generasi muda</p>
+                    </div>
+                    <div class="gallery-actions">
+                        <button class="gallery-action-btn download" title="Download">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="gallery-action-btn delete" title="Hapus">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pelayanan" data-title="Kunjungan Rumah Sakit" data-description="Pelayanan doa bagi yang sakit">
+                    <img src="./asset/imgs/img (4).jpg" alt="Kunjungan Rumah Sakit">
+                    <div class="gallery-overlay">
+                        <h4>Pemudah Yohen</h4>
+                        <p>Pelayanan kekompakan pemudah "Yohen" Yohanes Entrop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+        </div>
+        <button class="lightbox-download" id="lightbox-download-btn">
+            <i class="fas fa-download"></i> Download
+        </button>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Kami siap melayani dan menjawab pertanyaan Anda</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. wali kota, Hamadi, entrop, jayapura kota</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>(+62) 813-4430-9059</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>gbyohanesentrop35@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Ibadah</h4>
+                            <p>Minggu: 08:00 - 11:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d281.58885184538855!2d140.68572437151275!3d-2.569352473867827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c59004dc852ab%3A0xe2cb9e1d181f7fe6!2sGereja%20Baptis%20YOHANES%20ENTROP!5e1!3m2!1sid!2sid!4v1759186947135!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Streaming Section -->
+    <section id="live" class="content-section animate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Live Streaming Ibadah</h2>
+                <p>Ikuti ibadah kami dari mana saja</p>
+            </div>
+            <div class="live-container">
+                <div class="live-badge">
+                    <i class="fas fa-circle"></i> LIVE
+                </div>
+                <div class="live-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3fLV2os74Ik?si=zeNjPOI7buamoDc_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="live-info">
+                    <h3>Ibadah Minggu Online</h3>
+                    <p>Bergabunglah dengan kami dalam ibadah mingguan yang disiarkan langsung dari Gereja Baptis Yohanes Entrop</p>
+                    <div class="live-schedule">
+                        <div class="live-schedule-item">
+                            <i class="far fa-calendar-alt"></i> Setiap Minggu
+                        </div>
+                        <div class="live-schedule-item">
+                            <i class="far fa-clock"></i> 08:00 - 11:00 WIB
+                        </div>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Gereja Baptis Yohanes Entrop</h4>
+                    <p>Tempat persekutuan, pembinaan iman, dan pelayanan kasih bagi semua umat</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61580822491086" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Tautan Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="#beranda"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="#tentang"><i class="fas fa-church"></i> Tentang Kami</a></li>
+                        <li><a href="#pengumuman"><i class="fas fa-bullhorn"></i> Pengumuman</a></li>
+                        <li><a href="#agenda"><i class="far fa-calendar-alt"></i> Agenda</a></li>
+                        <li><a href="#galeri"><i class="far fa-images"></i> Galeri</a></li>
+                        <li><a href="#kontak"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Waktu Ibadah</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="far fa-clock"></i> Minggu: 08:00 & 10:30 WIB</a></li>
+                        <li><a href="#"><i class="far fa-clock"></i> Rabu: 18:30 WIB</a></li>
+                        <li><a href="#"><i class="far fa-clock"></i> Jumat: 18:30 WIB</a></li>
+                        <li><a href="#"><i class="far fa-clock"></i> Sabtu: 18:30 WIB</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Hubungi Kami</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jl.wali kota, hamadi, entrop, jayapura kota</a></li>
+                        <li><a href="#"><i class="fas fa-phone-alt"></i> +62-813-4430-9059</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> gbyohanesentrop35@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gereja Baptis Yohanes Entrop. All Rights reserved.</p>
+                <p>&copy;  <i>Design <a href="https://wakerkwameson.github.io/Profile_PersonelWebApp/">Mewacode</a>⭐⭐⭐</i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Modal for Image Upload -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Upload Foto Galeri</h3>
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop gambar di sini atau <span>klik untuk browse</span></p>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+            <div class="image-preview" id="imagePreview">
+                <img id="previewImg" src="" alt="Preview">
+            </div>
+            <form id="uploadForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="imgTitle">Judul Foto</label>
+                        <input type="text" id="imgTitle" name="imgTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imgCategory">Kategori</label>
+                        <select id="imgCategory" name="imgCategory" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="ibadah">Ibadah</option>
+                            <option value="pembinaan">Pembinaan</option>
+                            <option value="pelayanan">Pelayanan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="imgDescription">Deskripsi</label>
+                    <textarea id="imgDescription" name="imgDescription" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-upload">Upload Foto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Foto berhasil diupload!</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    
+    <script src="./asset/java/javacsript.js"></script>
+    <script src="./asset/java/contoh.js"></script>
+</body>
+</html>
